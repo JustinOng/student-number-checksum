@@ -1,0 +1,19 @@
+<html>
+<script>
+function calculate() {
+  var stno = document.getElementById("stdno").value;
+  var k = "70379139";
+  var sum = 0;
+  for(var i = 0; i < 8; i++) {
+    sum += parseInt(stno[i]) * parseInt(k[i]);
+  }
+  var checkdigit = "ABCDEFGHJK"[sum%10];
+  document.getElementById("checkdigit").innerText = checkdigit;
+}
+</script>
+Student number (Eg 12345678): <input type="number" id="stdno"/>
+<input type="button" onclick="calculate()" value="Calculate"/>
+<br/>
+
+Check-digit: <span id="checkdigit"></span>
+</html>
